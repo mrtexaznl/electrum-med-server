@@ -86,7 +86,7 @@ def create_config(filename=None):
     config.set('server', 'password', '')
     config.set('server', 'irc', 'no')
     config.set('server', 'irc_nick', '')
-    config.set('server', 'coin', 'litecoin')
+    config.set('server', 'coin', 'mediterraneancoin')
     config.set('server', 'use_poller', 'yes')
 
     config.add_section('leveldb')
@@ -95,7 +95,7 @@ def create_config(filename=None):
 
     # set network parameters
     config.add_section('network')
-    config.set('network', 'type', 'litecoin_main')
+    config.set('network', 'type', 'mediterraneancoin_main')
 
     # try to find the config file in the default paths
     if not filename:
