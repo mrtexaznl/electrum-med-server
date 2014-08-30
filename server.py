@@ -69,13 +69,13 @@ def create_config(filename=None):
     # set some defaults, which will be overwritten by the config file
     config.add_section('server')
     config.set('server', 'banner', 'Welcome to Electrum!')
-    config.set('server', 'banner_file', '/etc/electrum-ltc.banner')
+    config.set('server', 'banner_file', '/etc/electrum-med.banner')
     config.set('server', 'host', 'localhost')
-    config.set('server', 'electrum_rpc_port', '8000')
+    config.set('server', 'electrum_rpc_port', '9378')
     config.set('server', 'report_host', '')
-    config.set('server', 'stratum_tcp_port', '50001')
+    config.set('server', 'stratum_tcp_port', '59378')
     config.set('server', 'stratum_http_port', '')
-    config.set('server', 'stratum_tcp_ssl_port', '50002')
+    config.set('server', 'stratum_tcp_ssl_port', '59379')
     config.set('server', 'stratum_http_ssl_port', '')
     config.set('server', 'report_stratum_tcp_port', '')
     config.set('server', 'report_stratum_http_port', '')
@@ -90,7 +90,7 @@ def create_config(filename=None):
     config.set('server', 'use_poller', 'yes')
 
     config.add_section('leveldb')
-    config.set('leveldb', 'path', '/dev/shm/electrum-ltc_db')
+    config.set('leveldb', 'path', '/dev/shm/electrum-med_db')
     config.set('leveldb', 'pruning_limit', '100')
 
     # set network parameters
@@ -100,7 +100,7 @@ def create_config(filename=None):
     # try to find the config file in the default paths
     if not filename:
         for path in ('/etc/', ''):
-            filename = path + 'electrum-ltc.conf'
+            filename = path + 'electrum-med.conf'
             if os.path.isfile(filename):
                 break
 

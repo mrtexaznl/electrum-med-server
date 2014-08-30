@@ -1,14 +1,14 @@
 [server]
 host = localhost
-electrum_rpc_port = 8000
-stratum_tcp_port = 50001
-#stratum_tcp_ssl_port = 50002
+electrum_rpc_port = 9378
+stratum_tcp_port = 59378
+#stratum_tcp_ssl_port = 59379
 #report_host = 
 #report_stratum_tcp_port = 50001
 #report_stratum_tcp_ssl_port = 50002
 password = secret
 banner = Welcome to Electrum!
-banner_file = /etc/electrum-ltc.banner
+banner_file = /etc/electrum-med.banner
 #irc = no
 #irc_nick = <yournickname>
 #ssl_certfile = /path/to/electrum-server.crt
@@ -17,13 +17,14 @@ banner_file = /etc/electrum-ltc.banner
 #use_poller = no
 
 [leveldb]
+# read README.leveldb!!!
 path = /path/to/your/database
 # for each address, history will be pruned if it is longer than this limit
 pruning_limit = 100
 
 [bitcoind]
 host = localhost
-port = 9332
-# user and password from litecoin.conf
+port = 9372
+# user and password from mediterraneancoin.conf
 user = user
 password = password

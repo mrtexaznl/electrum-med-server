@@ -93,7 +93,7 @@ class IrcThread(threading.Thread):
             try:
                 s.send('USER electrum 0 * :' + self.host + ' ' + ircname + '\n')
                 s.send('NICK ' + self.nick + '\n')
-                s.send('JOIN #electrum-ltc\n')
+                s.send('JOIN #electrum-med\n')
                 t = 0
 
                 while not self.processor.shared.stopped():
@@ -144,7 +144,7 @@ class IrcThread(threading.Thread):
 
                     if time.time() - t > 5*60:
                         #self.processor.push_response({'method': 'server.peers', 'params': [self.get_peers()]})
-                        s.send('NAMES #electrum-ltc\n')
+                        s.send('NAMES #electrum-med\n')
                         t = time.time()
                         self.peers = {}
             except:

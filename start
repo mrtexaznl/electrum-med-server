@@ -19,7 +19,7 @@ if [[ $PID != *[!0-9]* ]]; then
 fi
 
 
-electrum_config="/etc/electrum-ltc.conf"
+electrum_config="/etc/electrum-med.conf"
 
 if [ ! -f $electrum_config ]; then
     echo "$electrum_config does not exist"
@@ -37,17 +37,17 @@ rmdir $path --ignore-fail-on-non-empty
 
 if [ ! -d $path ]; then
     echo "Database not found in $path."
-    read -p "Do you want to download it from the Electrum-LTC foundry to $path ? " -n 1 -r
+    read -p "Do you want to download it from the Electrum-MED foundry to $path ? " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
 	mkdir -p $path
-	wget -O - "http://foundry.electrum-ltc.org/leveldb-dump/electrum-fulltree-100-latest.tar.gz" | tar --extract --gunzip --strip-components 1 --directory $path --file -
+	wget -O - "http://foundry.mediterraneancoin.org/leveldb-dump/electrum-fulltree-100-latest.tar.gz" | tar --extract --gunzip --strip-components 1 --directory $path --file -
     fi
 fi
 
-if [ electrum-ltc.log ]; then
-    mv ~/electrum-ltc.log ~/electrum-ltc.log.1
+if [ electrum-med.log ]; then
+    mv ~/electrum-med.log ~/electrum-med.log.1
 fi
 
 echo "Starting server as daemon"
-nohup /usr/bin/python -u server.py &> ~/electrum-ltc.log &
+nohup /usr/bin/python -u server.py &> ~/electrum-med.log &
