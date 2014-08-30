@@ -20,5 +20,10 @@ params = {
         'pubkey_address': 111,
         'script_address': 196,
         'genesis_hash': 'f5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f'
+    },
+    'mediterraneancoin_main': {
+        'pubkey_address': 51,
+        'script_address': 5,
+        'genesis_hash': '61bcf5b118ff2a3e823d3b9822c9be915cef9b5cc429e859bb4d8c121a034eef'
     }
 }

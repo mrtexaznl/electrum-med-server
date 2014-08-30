@@ -57,6 +57,7 @@ def setup_network_params(config):
     utils.SCRIPT_ADDRESS = int(params.get('script_address'))
     storage.GENESIS_HASH = params.get('genesis_hash')
 
+ 
     if config.has_option('network', 'pubkey_address'):
         utils.PUBKEY_ADDRESS = config.getint('network', 'pubkey_address')
     if config.has_option('network', 'script_address'):
